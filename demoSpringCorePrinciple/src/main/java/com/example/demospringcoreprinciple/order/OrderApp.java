@@ -4,12 +4,14 @@ import com.example.demospringcoreprinciple.AppConfig;
 import com.example.demospringcoreprinciple.member.Grade;
 import com.example.demospringcoreprinciple.member.Member;
 import com.example.demospringcoreprinciple.member.MemberService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
     public static void main(String[] args) {
-        AppConfig appConfig=new AppConfig();
-        MemberService memberService=appConfig.memberService();
-        OrderService orderService=appConfig.orderService();
+        ApplicationContext applicationContext=new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService=applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService=applicationContext.getBean("orderService", OrderService.class);
 
         Long memberId=1L;
         Member memberA = new Member(memberId, "memberA", Grade.VIP);
