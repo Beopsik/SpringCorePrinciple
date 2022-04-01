@@ -1,5 +1,6 @@
-package com.example.demospringcoreprinciple;
+package com.example.demospringcoreprinciple.scan;
 
+import com.example.demospringcoreprinciple.AutoAppConfig;
 import com.example.demospringcoreprinciple.member.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
