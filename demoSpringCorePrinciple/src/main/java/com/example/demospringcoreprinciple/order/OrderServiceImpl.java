@@ -3,7 +3,9 @@ package com.example.demospringcoreprinciple.order;
 import com.example.demospringcoreprinciple.discount.DiscountPolicy;
 import com.example.demospringcoreprinciple.member.Member;
 import com.example.demospringcoreprinciple.member.MemberRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
